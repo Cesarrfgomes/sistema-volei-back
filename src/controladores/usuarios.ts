@@ -24,7 +24,7 @@ export const cadastrarAluno = async (req: Request, res: Response) => {
 }
 
 export const cadastrarTutor = async (req: Request, res: Response) => {
-    const {nome, email, senha, telefone, cargo} = req.body
+    const {nome, email, senha, telefone} = req.body
 
     try {
         const senhaCriptografada = await bcrypt.hash(senha, 10)
@@ -45,7 +45,7 @@ export const cadastrarTutor = async (req: Request, res: Response) => {
 }
 
 export const cadastrarAdmin = async (req: Request, res: Response) => {
-    const {nome, email, senha, telefone, cargo} = req.body
+    const {nome, email, senha, telefone} = req.body
 
     try {
         const senhaCriptografada = await bcrypt.hash(senha, 10)
