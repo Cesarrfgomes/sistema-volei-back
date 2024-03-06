@@ -24,7 +24,7 @@ create table aulas (
 
 create table times(
 	id serial primary key,
-  nome varchar(50) not null
+  nome varchar(50) unique not null
 );
 
 create table torneio(
