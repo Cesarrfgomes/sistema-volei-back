@@ -25,6 +25,18 @@ export const login = async(req: Request, res: Response) =>{
 
         const {senha: _, ...usuario} = emailExiste
 
+        if(usuario.cargo === "ALUNO"){
+            usuario.cargo = 10
+        }
+        
+        if(usuario.cargo === "TUTOR"){
+            usuario.cargo = 11
+        }
+
+        if(usuario.cargo === "ADMINISTRADOR"){
+            usuario.cargo = 12
+        }
+
         return res.status(200).json({usuario,token})
     } catch (error) {
         return res.status(500).json({mensagem: "Erro interno do servidor."})
