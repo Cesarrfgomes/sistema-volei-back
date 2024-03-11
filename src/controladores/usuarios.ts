@@ -65,3 +65,25 @@ export const cadastrarAdmin = async (req: Request, res: Response) => {
     }
 }
 
+export const listarAlunos = async(req: Request, res: Response)=>{
+    try {
+        const alunos = await knex('usuarios').select('id', 'nome', 'email', 'telefone', 'cargo', 'time_id')
+        .where('cargo', '=', 'ALUNO')
+
+        return res.status(200).json(alunos)
+    } catch (error) {
+        return res.status(500).json({mensagem: "Erro interno do servidor."})
+    }
+}
+
+export const listarTutores = async(req: Request, res: Response)=>{
+    try {
+        const alunos = await knex('usuarios').select('id', 'nome', 'email', 'telefone', 'cargo', 'time_id')
+        .where('cargo', '=', 'TUTOR')
+
+        return res.status(200).json(alunos)
+    } catch (error) {
+        return res.status(500).json({mensagem: "Erro interno do servidor."})
+    }
+}
+

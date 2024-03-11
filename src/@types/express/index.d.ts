@@ -5,7 +5,8 @@ declare namespace Express {
             nome: string;
             email: string;
             senha: string;
-            telegfone: string
+            telefone: string;
+            cargo: number
         }
     }
 }
