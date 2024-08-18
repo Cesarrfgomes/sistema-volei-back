@@ -14,7 +14,6 @@ export const verificarEmailEmUso = async (req: Request, res: Response, next: Nex
 
         next()
     } catch (error) {
-        console.log(error)
         return res.status(500).json({mensagem: "Erro interno do servidor"})
     }
 }
