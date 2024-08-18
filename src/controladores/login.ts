@@ -28,13 +28,11 @@ export const login = async(req: Request, res: Response) =>{
         if(usuario.cargo === "ALUNO"){
             usuario.cargo = 10
         }
-
-        
+      
         if(usuario.cargo === "TUTOR"){
             usuario.cargo = 11
         }
 
-        
         if(usuario.cargo === "ADMINISTRADOR"){
             usuario.cargo = 12
         }
