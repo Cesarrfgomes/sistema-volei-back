@@ -32,8 +32,8 @@ export const cadastrarAula = async (req: Request, res: Response) =>{
 }
 
 export const editarAula = async (req: Request, res: Response) =>{
-    const {id} = req.params
     const {data, local, tutor_id} = req.body
+    const {id} = req.params
 
     try {
         const aula = await knex('aulas').where({id}).first()
