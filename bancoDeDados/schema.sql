@@ -2,9 +2,9 @@ create type "cargo" as enum ('ALUNO', 'TUTOR', 'ADMINISTRADOR')
 
 create table usuarios (
 	id serial primary key,
-  nome text not null,
-  email text unique not null,
-  senha text not null,
+  nome varchar(155) not null,
+  email varchar(255) unique not null,
+  senha varchar(255) not null,
   telefone varchar(14),
   cargo cargo NOT NULL DEFAULT 'ALUNO',
   time_id int references times(id)
@@ -24,13 +24,13 @@ create table aulas (
 
 create table times(
 	id serial primary key,
-  nome varchar(50) unique not null
+  nome varchar(100) unique not null
 );
 
 create table torneio(
 	id serial primary key,
-  nome varchar(50) not null,
-  local varchar(100) not null,
+  nome varchar(150) not null,
+  local varchar(150) not null,
   dataeHora timestamptz not null default now()
 );
 
